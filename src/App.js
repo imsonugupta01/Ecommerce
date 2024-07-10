@@ -1,25 +1,84 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Components/Home";
+import Login from "./Components/Login";
+import Signup from "./Components/Signup";
+import PgFOF from "./Components/PgFOF";
+import Cart from "./Components/Cart";
+import UserProfile from "./Components/UserProfile";
+import Addproduct from "./Components/Addproduct";
+import Allproductpage from "./Components/Some-Product-Components/Allproductpage";
+import Specificproductpage from "./Components/Some-Product-Components/Specificproductpage";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/sellproduct" element={<Addproduct/>} />
+        <Route exact path="/cartdata" element={<Cart />} />
+        <Route exact path="userprofile" element={<UserProfile/>}/>
+        <Route exact path="/product-type/mobile" element={<Allproductpage type={'Mobile'} />} />
+        <Route exact path="/product-type/laptop" element={<Allproductpage type={'Laptop'} />} />
+        <Route exact path="/product-type/camera" element={<Allproductpage type={'Camera'} />} />
+        <Route exact path="/product-type/shoes" element={<Allproductpage type={'Shoes'} />} />
+        <Route exact path="/product/:type/:id" element={<Specificproductpage />} />
+        <Route path="*" element={<PgFOF />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
 export default App;
+
+// // src/App.js
+// import React from 'react';
+// import { BrowserRouter,createBrowserRouter,Routes, RouterProvider, Route } from 'react-router-dom';
+// import Navbar from './Components/Navbar';
+// import SignIn from './Components/SignIn';
+// import SignUp from './Components/SignUp';
+// import { AuthContext } from './authContext';
+
+// function App() {
+
+//   const souter = createBrowserRouter([
+//     {
+//       path: '/',element: <Navbar />,
+//       children: [
+//         { path: "/signIn", element: <SignIn /> },
+//         { path: "/signUp", element: <SignUp /> }
+//       ]
+//     }
+//   ]);
+
+//   return (
+
+//     <BrowserRouter>
+
+//     <AuthContext> <Routes>
+//       <Route path="/" element={<Navbar/>}/>
+//       <Route path="/signIn" element={<SignIn />} />
+//       <Route path="/signUp" element={<SignUp />} />
+//     </Routes>
+
+//     </AuthContext>
+
+//   </BrowserRouter>
+
+//     //<RouterProvider router={souter}/>
+
+//   );
+// }
+
+// export default App;
+
+// // <Routes>
+// // <Route path="/" element={<Navbar/>}/>
+
+// // <Route path="/signIn" element={<SignIn/>}/>
+// // <Route path='/signUp' element={<SignUp/>}/>
+
+// </Routes>
