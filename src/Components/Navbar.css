@@ -5,6 +5,7 @@
     background-color: black;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 .LeftContainer img {
@@ -45,7 +46,15 @@ nav button:hover {
     width: 30px;
     height: fit-content;
 }
-
+.cart-btnse{
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+.cart-btnse img {
+    width: 16px;
+    height: fit-content;
+}
 .cart-icon-css {
     background-color: rgb(255, 187, 0);
     width: 30px;

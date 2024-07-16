@@ -6,6 +6,7 @@ import profilelogo from '../Components/assets/profilelogo.png';
 import applogo from '../Components/assets/applogo.png';
 import { auth, db } from '../FirebaseConfigs/firebaseConfigs';
 import { collection, getDocs, query, where } from 'firebase/firestore';
+import search from "../Components/assets/search.png"
 
 const Navbar = () => {
     function GetCurrentUser() {
@@ -61,6 +62,10 @@ const Navbar = () => {
                 <div className="RightContainer">
                     {!loggeduser && <nav>
                         <Link to='/'><button>Home</button></Link>
+                        <div className='cart-btnse'>
+                            <img src={search} alt="Cart Logo" />
+                            {/* <span className='cart-icon-css'>0</span> */}
+                        </div>
                         <Link to='/signup'><button>Register</button></Link>
                         <Link to='/login'><button>Login</button></Link>
                         <div className='cart-btn'>
@@ -74,7 +79,7 @@ const Navbar = () => {
 
                     {loggeduser && <nav>
                         <Link to='/'><button>Home</button></Link>
-                        <Link to='/sellproduct'><button>Sell</button></Link>
+                        <Link to='/sellproduct'><button>Admin</button></Link>
                         <div className='cart-btn'>
                             <Link to='/cartdata'><img src={cartlogo} alt="Cart Logo" /></Link>
                             <button className='cart-icon-css'>{cartdata.length}</button>

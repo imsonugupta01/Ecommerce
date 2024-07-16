@@ -70,8 +70,9 @@
 }
 
 .buy-cart .btn {
-    background-color: white;
+    background-color: rgb(9, 9, 9);
     color: #ffbb00;
+    font-weight: 600;
     border: 2px solid #ffbb00;
     padding: 5px;
     border-radius: 5px;

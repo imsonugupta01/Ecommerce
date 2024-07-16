@@ -16,7 +16,7 @@ const Specificproductpage = () => {
  
     function GetCurrentUser() {
         const [user, setUser] = useState("");
-        // const usersCollectionRef = collection(db, "users");
+        const usersCollectionRef = collection(db, "users");
         useEffect(() => {
             auth.onAuthStateChanged(userlogged => {
                 if (userlogged) {
@@ -40,7 +40,7 @@ const Specificproductpage = () => {
 
 
     function GetCurrentProduct() {
-        // const productCollectionRef = collection(db, `products-${type.toUpperCase()}`);
+        const productCollectionRef = collection(db, `products-${type.toUpperCase()}`);
 
         useEffect(() => {
             const getProduct = async () => {
@@ -90,6 +90,7 @@ const Specificproductpage = () => {
         }
 
     }
+    
 
     return (
 
@@ -136,7 +137,7 @@ const Specificproductpage = () => {
                                 </div>
                             </div>
                             <div className='buy-cart'>
-                                <button className='btn'>Buy Now</button>
+                                {/* <button className='btn' >Buy Now</button> */}
                                 <button className='btn' onClick={addtocart}>Add to Cart</button>
                             </div>
                         </div>

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import Navbar from './Navbar'
 import "./Addproduct.css"
+import { Link } from 'react-router-dom';
 
 const Addproduct = () => {
     const [producttitle, setProductTitle] = useState("");
@@ -17,7 +18,7 @@ const Addproduct = () => {
     const [warranty, setWarranty] = useState("")
     const [productimage, setProductImage] = useState("")
 
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
     const [imageError, setImageError] = useState('');
     const [successMsg, setSuccessMsg] = useState('');
     const [uploadError, setUploadError] = useState('');
@@ -26,7 +27,7 @@ const Addproduct = () => {
 
     function GetCurrentUser() {
         const [user, setUser] = useState("");
-        const usersCollectionRef = collection(db, "users");
+        // const usersCollectionRef = collection(db, "users");
         useEffect(() => {
             auth.onAuthStateChanged(userlogged => {
                 if (userlogged) {
@@ -103,8 +104,10 @@ const Addproduct = () => {
     return (
         <div>
             <Navbar />
-            {loggeduser && loggeduser[0].email == "sonugupta05001@gmail.com" ?
-                <div className='addprod-container'>
+            {loggeduser && loggeduser[0].email === "sonugupta05001@gmail.com" ?
+               <div className='main-container'>
+
+               <div className='addprod-container'>
                     <form onSubmit={handleAddProduct} className='addprod-form'>
                         <p>Add Data</p>
                         {successMsg && <>
@@ -140,6 +143,23 @@ const Addproduct = () => {
                         <button type='submit'>Add</button>
                     </form>
                 </div>
+
+                <div className='manage-cart'>
+                <div  >
+                      <Link to="/sell/history">Product History</Link>
+                  </div>
+                   <div  >
+                     <Link to="#">Delete Items</Link> 
+                  </div>
+                  <div  >
+                     <Link> Transactions</Link>
+                  </div>
+                  
+                </div>
+                
+               
+                 
+               </div>
                 :
                 <div>You don't have access to add products</div>}
         </div>
