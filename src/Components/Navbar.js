@@ -92,10 +92,14 @@ const Navbar = () => {
                 </div>
             </div>
             <div className='product-types'>
-                <a href="/product-type/mobile"><button>Mobiles</button></a>
+                {/* <a href="/product-type/mobile"><button>Mobiles</button></a>
                 <a href="/product-type/laptop"><button>Laptops</button></a>
                 <a href="/product-type/camera"><button>Cameras</button></a>
-                <a href="/product-type/shoes"><button>Shoes</button></a>
+                <a href="/product-type/shoes"><button>Shoes</button></a> */}
+                <Link to="/product-type/mobile"><button>Mobiles</button></Link>
+            <Link to="/product-type/laptop"><button>Laptops</button></Link>
+            <Link to="/product-type/camera"><button>Cameras</button></Link>
+            <Link to="/product-type/shoes"><button>Shoes</button></Link>
             </div>
         </div>
     );
