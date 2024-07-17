@@ -45,12 +45,12 @@ const Specificproductpage = () => {
         useEffect(() => {
             const getProduct = async () => {
 
-                const docRef = doc(db, `products-${type.toUpperCase()}`, id);
+                const docRef = doc(db, `products-${type.toUpperCase()}`,id);
                 const docSnap = await getDoc(docRef);
                 setProduct(docSnap.data());
             };
             getProduct();
-        }, [])
+        }, [id,type])
     //     return product
     // }
 
