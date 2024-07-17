@@ -32,7 +32,7 @@ const Login = () => {
                 }, 3000);
             })
             .catch((error) => {
-                const errorCode = error.code;
+                // const errorCode = error.code;
                 console.log(error.message)
                 if (error.message === 'Firebase: Error (auth/invalid-email).') {
                     setErrorMsg('Please fill all required fields')

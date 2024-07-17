@@ -15,7 +15,7 @@ const Productcontainer = (product) => {
 
     return (
         <div className='product-container'>
-            <img src={p.prodimage}></img>
+            <img src={p.prodimage} alt='imag'></img>
             <div className='product-details'>
                 <a href={`/product/${p.producttype}/${p.id}`}>
                     <button className='producttitle'>{p.producttitle}</button>
