@@ -50,7 +50,7 @@ const Specificproductpage = () => {
                 setProduct(docSnap.data());
             };
             getProduct();
-        }, [])
+        }, [id])
         return product
     }
 
