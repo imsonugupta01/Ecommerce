@@ -39,9 +39,9 @@ const Specificproductpage = () => {
     const loggeduser = GetCurrentUser();
 
 
-    function GetCurrentProduct() {
+    // function GetCurrentProduct() {
         // const productCollectionRef = collection(db, `products-${type.toUpperCase()}`);
-
+  
         useEffect(() => {
             const getProduct = async () => {
 
@@ -50,11 +50,11 @@ const Specificproductpage = () => {
                 setProduct(docSnap.data());
             };
             getProduct();
-        }, [id])
-        return product
-    }
+        }, [])
+    //     return product
+    // }
 
-    GetCurrentProduct();
+    // GetCurrentProduct();
     // console.log(product)
     // console.log(currentprod.description)
 
