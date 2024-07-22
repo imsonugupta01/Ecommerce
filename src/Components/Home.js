@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 
-import Banner from "./Banner";
+// import Banner from "./Banner";
 // import { auth, db } from "../FirebaseConfigs/firebaseConfigs";
 // import { collection, getDocs, query, where } from "firebase/firestore";
 import ProductSlider from "./Some-Product-Components/ProductSlider";
