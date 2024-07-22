@@ -70,7 +70,7 @@ function Orders() {
     <Navbar />
     {
         orderHistory && orderHistory.map((order, index) => (
-            console.log(order.buyer),
+          
             order.buyer === loggeduser[0].uid && (
                 
                 <div key={index}>
