@@ -161,7 +161,7 @@ const Addproduct = () => {
                  
                </div>
                 :
-                <div>You don't have access to add products</div>}
+                <div><center>You don't have access to add products</center></div>}
         </div>
     )
 }

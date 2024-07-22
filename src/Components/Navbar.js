@@ -62,10 +62,11 @@ const Navbar = () => {
                 <div className="RightContainer">
                     {!loggeduser && <nav>
                         <Link to='/'><button>Home</button></Link>
-                        <div className='cart-btnse'>
+                        <Link to="/orders"><button>Orders</button></Link>
+                        {/* <div className='cart-btnse'>
                             <img src={search} alt="Cart Logo" />
-                            {/* <span className='cart-icon-css'>0</span> */}
-                        </div>
+                             <span className='cart-icon-css'>0</span> 
+                        </div> */}
                         <Link to='/signup'><button>Register</button></Link>
                         <Link to='/login'><button>Login</button></Link>
                         <div className='cart-btn'>
@@ -79,6 +80,7 @@ const Navbar = () => {
 
                     {loggeduser && <nav>
                         <Link to='/'><button>Home</button></Link>
+                        <Link to="/orders"><button>Orders</button></Link>
                         <Link to='/sellproduct'><button>Admin</button></Link>
                         <div className='cart-btn'>
                             <Link to='/cartdata'><img src={cartlogo} alt="Cart Logo" /></Link>
@@ -92,10 +94,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className='product-types'>
-                {/* <a href="/product-type/mobile"><button>Mobiles</button></a>
-                <a href="/product-type/laptop"><button>Laptops</button></a>
-                <a href="/product-type/camera"><button>Cameras</button></a>
-                <a href="/product-type/shoes"><button>Shoes</button></a> */}
+                
                 <Link to="/product-type/mobile"><button>Mobiles</button></Link>
             <Link to="/product-type/laptop"><button>Laptops</button></Link>
             <Link to="/product-type/camera"><button>Cameras</button></Link>

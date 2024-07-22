@@ -1,21 +1,16 @@
-// import React, { useState, useEffect } from 'react'
-// import 'bootstrap/dist/css/bootstrap.min.css'
+
+
+// import React, { useState, useEffect } from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 // import Carousel from "react-multi-carousel";
-
-
-
 // import "react-multi-carousel/lib/styles.css";
 // import Sliderproductcard from './Sliderproductcard';
-// import {
-//     collection,
-//     getDocs
-// } from "firebase/firestore";
+// import { collection, getDocs } from "firebase/firestore";
 // import { db } from "../../FirebaseConfigs/firebaseConfigs";
 
-// const ProductSlider = (props) => {
+// const ProductSlider = ({ type }) => {
 //     const responsive = {
 //         superLargeDesktop: {
-//             // the naming can be any, depends on you.
 //             breakpoint: { max: 4000, min: 3000 },
 //             items: 5
 //         },
@@ -33,28 +28,25 @@
 //         }
 //     };
 
-
-
 //     const [products, setProducts] = useState([]);
+
 //     useEffect(() => {
 //         const getProducts = () => {
-
 //             const productsArray = [];
-//             const path = `products-${props.type.toUpperCase()}`
-//             // console.log(props)
+//             const path = `products-${type.toUpperCase()}`;
 
 //             getDocs(collection(db, path)).then((querySnapshot) => {
 //                 querySnapshot.forEach((doc) => {
-//                     // console.log(doc.id, " => ", doc.data());
-//                     productsArray.push({ ...doc.data(), id: doc.id })
+//                     productsArray.push({ ...doc.data(), id: doc.id });
 //                 });
-//                 setProducts(productsArray)
-//                 // console.log('done')
-//             }).catch('Error error error')
-//         }
+//                 setProducts(productsArray);
+//             }).catch((error) => {
+//                 console.error("Error fetching products: ", error);
+//             });
+//         };
 
 //         getProducts();
-//     }, [])
+//     }, [type]);
 
 //     return (
 //         <div className='prod-slider'>
@@ -65,12 +57,14 @@
 //                         product={product}
 //                     />
 //                 ))}
-//             </Carousel >
+//             </Carousel>
 //         </div>
-//     )
+//     );
 // }
 
-// export default ProductSlider
+// export default ProductSlider;
+
+
 
 
 import React, { useState, useEffect } from 'react';
@@ -97,25 +91,25 @@ const ProductSlider = ({ type }) => {
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 3
+            items: 1 // Show only 1 item on mobile
         }
     };
 
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const getProducts = () => {
-            const productsArray = [];
-            const path = `products-${type.toUpperCase()}`;
-
-            getDocs(collection(db, path)).then((querySnapshot) => {
+        const getProducts = async () => {
+            try {
+                const productsArray = [];
+                const path = `products-${type.toUpperCase()}`;
+                const querySnapshot = await getDocs(collection(db, path));
                 querySnapshot.forEach((doc) => {
                     productsArray.push({ ...doc.data(), id: doc.id });
                 });
                 setProducts(productsArray);
-            }).catch((error) => {
+            } catch (error) {
                 console.error("Error fetching products: ", error);
-            });
+            }
         };
 
         getProducts();
@@ -123,7 +117,7 @@ const ProductSlider = ({ type }) => {
 
     return (
         <div className='prod-slider'>
-            <Carousel responsive={responsive}>
+            <Carousel responsive={responsive} infinite={true}>
                 {products.map((product) => (
                     <Sliderproductcard
                         key={product.id}

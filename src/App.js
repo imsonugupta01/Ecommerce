@@ -10,6 +10,7 @@ import Addproduct from "./Components/Addproduct";
 import Allproductpage from "./Components/Some-Product-Components/Allproductpage";
 import Specificproductpage from "./Components/Some-Product-Components/Specificproductpage";
 import ProductHistory from "./Components/Admin/ProductHistory";
+import Orders from "./Components/Order/Orders";
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route exact path="/product-type/shoes" element={<Allproductpage type={'Shoes'} />} />
         <Route exact path="/product/:type/:id" element={<Specificproductpage />} />
         <Route exact path="/sell/history" element={<ProductHistory/>}/>
+        <Route exact path="/orders" element={<Orders/>}/>
         <Route path="*" element={<PgFOF />} />
       </Routes>
     </BrowserRouter>
