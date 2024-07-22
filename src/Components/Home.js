@@ -38,8 +38,8 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <Banner />
-      {/* <Product/> */}
+      {/* <Banner /> */}
+     
       <div className="slider-head">
         <p>Limited Time Deals</p>
       </div>

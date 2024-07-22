@@ -1,3 +1,6 @@
+
+
+
 .allproductpage .heading {
     background-color: rgb(240, 240, 240);
     height: 100px;
@@ -7,15 +10,29 @@
 }
 
 .allproductpage .heading p {
-    font-size: 50px;
-
+    font-size: 2.3rem;
 }
 
 .allproductpage .allproductcontainer {
+    /* margin-left: 5%; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .allproductpage .heading p {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .allproductpage .allproductcontainer {
+        margin-left: 5%;
+        flex-direction: column;
+        align-items: stretch;
+    }
 }

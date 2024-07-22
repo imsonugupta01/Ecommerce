@@ -1,3 +1,6 @@
+
+
+
 .product-container {
     display: flex;
     flex-direction: row;
@@ -30,6 +33,7 @@
     background-color: white;
     border: none;
     text-align: left;
+ 
 }
 
 .price-container {
@@ -38,7 +42,6 @@
     margin: 0px;
     flex-direction: column;
 }
-
 
 .mrp,
 .saleprice,
@@ -57,10 +60,8 @@
 .mrp .rate {
     color: red;
     margin-left: 5px;
-
     border: 1px solid;
 }
-
 
 .buy-cart {
     display: flex;
@@ -82,4 +83,36 @@
 .buy-cart .btn:hover {
     background-color: black;
     color: #ffbb00;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: auto;
+    }
+
+    .product-container img {
+        max-width: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    .product-details {
+        width: 100%;
+    }
+
+    .producttitle {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .price-container {
+        align-items: center;
+    }
+
+    .buy-cart {
+        justify-content: center;
+    }
 }
