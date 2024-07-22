@@ -6,7 +6,7 @@ import profilelogo from '../Components/assets/profilelogo.png';
 import applogo from '../Components/assets/applogo.png';
 import { auth, db } from '../FirebaseConfigs/firebaseConfigs';
 import { collection, getDocs, query, where } from 'firebase/firestore';
-import search from "../Components/assets/search.png"
+
 
 const Navbar = () => {
     function GetCurrentUser() {

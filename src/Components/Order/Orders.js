@@ -3,7 +3,7 @@ import Navbar from '../Navbar'
 import { auth, db } from "../../FirebaseConfigs/firebaseConfigs"
 import { collection, getDocs, query, where} from 'firebase/firestore'
 import OrderCard from './OrderCard';
-import { or } from 'firebase/firestore/lite';
+
 
 function Orders() {
     function GetCurrentUser() {
