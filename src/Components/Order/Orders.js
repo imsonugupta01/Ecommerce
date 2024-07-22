@@ -68,6 +68,7 @@ function Orders() {
   return (
     <div>
     <Navbar />
+    <div className='cart-head'>You Purchased</div>
     {
         orderHistory && orderHistory.map((order, index) => (
           

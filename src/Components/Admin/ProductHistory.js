@@ -53,6 +53,7 @@ function ProductHistory() {
     return (
         <div>
             <Navbar />
+            
             {sellHistory.length > 0 ? (
                 sellHistory.map((history, index) => (
                     <HistoryCard

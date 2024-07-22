@@ -255,7 +255,7 @@ nav button:hover {
         flex-direction: column;
         background-color: black;
         position: absolute;
-        top: 60px;
+        top: 50px;
         right: 0;
         width: 200px;
         height: 100vh;
@@ -281,7 +281,7 @@ nav button:hover {
     }
 
     .cart-btn img, .profile-icon {
-        width: 30px;
+        width: 3.5rem;
     }
 
     .product-types {
