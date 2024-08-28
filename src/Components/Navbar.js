@@ -173,7 +173,8 @@ const Navbar = () => {
         <div>
             <div className='navbar'>
                 <div className="LeftContainer">
-                    <img src={applogo} alt="App Logo" />
+                    {/* <img src={applogo} alt="App Logo" /> */}
+                    <h1 style={{color:"white",marginLeft:"5%"}}>apnaStore</h1>
                 </div>
                 <div className="RightContainer">
                     <button className='sidebar-toggle' onClick={toggleSidebar}>☰</button>
@@ -195,7 +196,7 @@ const Navbar = () => {
                         {loggeduser && <>
                             <Link to='/'><button>Home</button></Link>
                             <Link to="/orders"><button>Orders</button></Link>
-                            <Link to='/sellproduct'><button>Admin</button></Link>
+                             <Link to='/sellproduct'><button>Admin</button></Link>
                             <div className='cart-btn'>
                                 <Link to='/cartdata'><img src={cartlogo} alt="Cart Logo" /></Link>
                                 <button className='cart-icon-css'>{cartdata.length}</button>
