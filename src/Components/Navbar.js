@@ -113,7 +113,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import cartlogo from '../Components/assets/cartlogo.png';
 import profilelogo from '../Components/assets/profilelogo.png';
-import applogo from '../Components/assets/applogo.png';
+// import applogo from '../Components/assets/applogo.png';
+// import applogo from "../Components/assets/hk412bQf.jpeg"
 import { auth, db } from '../FirebaseConfigs/firebaseConfigs';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 
@@ -174,7 +175,12 @@ const Navbar = () => {
             <div className='navbar'>
                 <div className="LeftContainer">
                     {/* <img src={applogo} alt="App Logo" /> */}
-                    <h1 style={{color:"white",marginLeft:"5%"}}>apnaStore</h1>
+                    {/* <h1 style={{color:"white",marginLeft:"5%"}}>apnaStore</h1> */}
+                    {/* <h1 style={{ color: "white", marginLeft: "5%", fontFamily: "cursive" }}>apnaStore</h1> */}
+                    {/* <h1 style={{ color: "white", marginLeft: "5%", fontFamily: "'Brush Script MT', cursive", fontStyle: "italic" }}>apnaStore</h1> */}
+                    <h1 style={{ color: "white", marginLeft: "5%", fontFamily: "'Dancing Script', cursive" }}>apnaStore</h1>
+
+
                 </div>
                 <div className="RightContainer">
                     <button className='sidebar-toggle' onClick={toggleSidebar}>☰</button>
